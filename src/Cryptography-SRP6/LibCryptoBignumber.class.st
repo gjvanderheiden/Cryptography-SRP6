@@ -170,17 +170,6 @@ LibCryptoBignumber >> primPointer [
 ]
 
 { #category : #'private - primitives' }
-LibCryptoBignumber >> prim_bl_free [
-	self ffiCall: #( void BN_free(void* pointerToBN) )  
-]
-
-{ #category : #'private - primitives' }
-LibCryptoBignumber >> prim_bl_new [
-	^self ffiCall: #(  void* BN_new (void) )
-
-]
-
-{ #category : #'private - primitives' }
 LibCryptoBignumber >> prim_bn_add: pointerToBnToAdd withResultIn: resultPointer [
   "Call primitive. Note that the answer is an integer or C type Boolean. 1 or true
    is a success."
