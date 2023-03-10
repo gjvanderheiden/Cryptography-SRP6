@@ -16,7 +16,7 @@ SRP6Verifier >> asByteArray [
 	bnG := LibCryptoBignumber new setWithByteArray: generator .
 	bnN := LibCryptoBignumber new  setWithByteArray: prime.
 	bnX := LibCryptoBignumber new setWithByteArray: privateKey.
-	bnVerifier := bnG moduloExponent:bnX  modulo: bnN.
+	bnVerifier := bnG exponent:bnX  modulo: bnN.
 	answer := bnVerifier asByteArray.
 	bnG free. bnN free. bnX free. bnVerifier free.
 
